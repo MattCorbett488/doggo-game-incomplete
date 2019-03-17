@@ -1,7 +1,7 @@
 package com.willowtreeapps.doggogame.network;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import com.google.gson.Gson;
 import com.willowtreeapps.doggogame.network.api.DoggoApi;

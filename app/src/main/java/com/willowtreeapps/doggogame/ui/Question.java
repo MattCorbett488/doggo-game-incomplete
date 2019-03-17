@@ -1,6 +1,6 @@
 package com.willowtreeapps.doggogame.ui;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import com.willowtreeapps.doggogame.model.Doggo;
 

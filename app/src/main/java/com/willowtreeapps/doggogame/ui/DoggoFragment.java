@@ -8,11 +8,11 @@ import android.animation.ObjectAnimator;
 import android.animation.TypeEvaluator;
 import android.content.Context;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.support.v4.content.ContextCompat;
-import android.support.v4.view.animation.FastOutLinearInInterpolator;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.core.content.ContextCompat;
+import androidx.interpolator.view.animation.FastOutLinearInInterpolator;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -102,7 +102,7 @@ public class DoggoFragment extends Fragment implements Question.View {
     }
 
     @Override
-    public void onSaveInstanceState(Bundle outState) {
+    public void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putInt(KEY_DOGGO, presenter.getCorrectIndex());
     }
@@ -150,7 +150,7 @@ public class DoggoFragment extends Fragment implements Question.View {
 
     @Override
     public void setImage(int index, @NonNull String url) {
-        GlideApp.with(this)
+        GlideApp.with(faces.get(index))
                 .load(url)
                 .placeholder(R.drawable.ic_face_white_48dp)
                 .circleCrop()
