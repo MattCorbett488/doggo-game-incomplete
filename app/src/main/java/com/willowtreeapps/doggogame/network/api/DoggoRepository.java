@@ -1,7 +1,7 @@
 package com.willowtreeapps.doggogame.network.api;
 
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import com.willowtreeapps.doggogame.model.Doggo;
 

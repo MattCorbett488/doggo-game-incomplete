@@ -1,11 +1,10 @@
 package com.willowtreeapps.doggogame.ui;
 
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.widget.FrameLayout;
-import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.willowtreeapps.doggogame.core.DoggoGameApplication;

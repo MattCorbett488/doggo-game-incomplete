@@ -2,7 +2,7 @@ package com.willowtreeapps.doggogame.core;
 
 import android.app.Application;
 import android.content.Context;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import com.google.gson.Gson;
 
