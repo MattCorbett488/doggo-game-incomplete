@@ -2,9 +2,8 @@ package com.willowtreeapps.doggogame.core;
 
 import android.app.Application;
 import android.content.Context;
-import androidx.annotation.NonNull;
 
-import com.google.gson.Gson;
+import androidx.annotation.NonNull;
 
 import java.util.Random;
 
@@ -31,11 +30,6 @@ class ApplicationModule {
     @Provides @NonNull @Singleton
     public Context provideContext(@NonNull Application application) {
         return application;
-    }
-
-    @Provides @NonNull @Singleton
-    public Gson provideGson() {
-        return new Gson();
     }
 
     @Provides @NonNull @Singleton

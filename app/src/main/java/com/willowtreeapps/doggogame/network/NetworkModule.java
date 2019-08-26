@@ -1,9 +1,10 @@
 package com.willowtreeapps.doggogame.network;
 
 import android.content.Context;
+
 import androidx.annotation.NonNull;
 
-import com.google.gson.Gson;
+import com.squareup.moshi.Moshi;
 import com.willowtreeapps.doggogame.network.api.DoggoApi;
 import com.willowtreeapps.doggogame.network.api.DoggoRepository;
 
@@ -19,7 +20,7 @@ import okhttp3.Cache;
 import okhttp3.HttpUrl;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
+import retrofit2.converter.moshi.MoshiConverterFactory;
 
 @Module
 public class NetworkModule {
@@ -66,15 +67,19 @@ public class NetworkModule {
     }
 
     @Provides @NonNull @Singleton
-    public DoggoApi provideDoggoApi(@NonNull Gson gson, @NonNull OkHttpClient client, @NonNull HttpUrl url) {
+    public DoggoApi provideDoggoApi(@NonNull Moshi moshi, @NonNull OkHttpClient client, @NonNull HttpUrl url) {
         return new Retrofit.Builder()
                 .client(client)
                 .baseUrl(url)
-                .addConverterFactory(GsonConverterFactory.create(gson))
+                .addConverterFactory(MoshiConverterFactory.create(moshi))
                 .build()
                 .create(DoggoApi.class);
     }
 
+    @Provides @NonNull @Singleton
+    public Moshi providesMoshi() {
+        return new Moshi.Builder().build();
+    }
 
     @Provides @NonNull @Singleton
     public DoggoRepository provideDoggoRepository(@NonNull DoggoApi api) {

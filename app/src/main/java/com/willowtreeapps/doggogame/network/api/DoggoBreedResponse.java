@@ -1,6 +1,6 @@
 package com.willowtreeapps.doggogame.network.api;
 
-import com.google.gson.annotations.SerializedName;
+import com.squareup.moshi.Json;
 
 import java.util.List;
 
@@ -98,7 +98,7 @@ class DoggoBreedResponse {
     static final String SUCCESS = "success";
 
     private String status;
-    private @SerializedName("message")
+    private @Json(name = "message")
     List<String> breeds;
 
     String getStatus() {
